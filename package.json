@@ -1,0 +1,20 @@
+{
+  "name": "com.glaas.easings",
+  "version": "0.1.0",
+  "displayName": "Speak-Easy",
+  "description": "Minimalistic dialogue system for Unity",
+  "unity": "2020.3.32f1",
+  "documentationUrl": "https://example.com/",
+  "author": {
+    "name": "Sebastien \"Glaas\" Decuyper",
+    "email": "seb.decuyper@gmail.com",
+    "url": "https://www.sebdec.net",
+    "samples": [
+      {
+        "displayName": "Prefabs",
+        "description": "Contains prefabs to kickstart your setup",
+        "path": "Samples~/Prefabs"
+      }
+    ]
+  }
+}
