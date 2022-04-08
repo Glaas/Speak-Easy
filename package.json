@@ -6,7 +6,7 @@
   "unity": "2020.3",
   "documentationUrl": "https://radweb.notion.site/Speak-Easy-cccef60ba0b04c7684d3650fe5a266d0/",
   "dependencies": {
-    "com.unity.textmeshpro@3.0": "3.0.6"
+    "com.unity.textmeshpro": "3.0.6"
   },
   "samples": [
     {
