@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "displayName": "Speak-Easy",
   "description": "Minimalistic dialogue system for Unity",
-  "unity": "2020.3.32f1",
+  "unity": "2020.3",
   "documentationUrl": "https://example.com/",
   "author": {
     "name": "Sebastien \"Glaas\" Decuyper",
