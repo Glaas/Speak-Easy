@@ -4,17 +4,20 @@
   "displayName": "Speak-Easy",
   "description": "Minimalistic dialogue system for Unity",
   "unity": "2020.3",
-  "documentationUrl": "https://example.com/",
+  "documentationUrl": "https://radweb.notion.site/Speak-Easy-cccef60ba0b04c7684d3650fe5a266d0/",
+  "dependencies": {
+    "com.unity.textmeshpro@3.0": "3.0.6"
+  },
+  "samples": [
+    {
+      "displayName": "Prefabs",
+      "description": "Contains prefabs to kickstart your setup",
+      "path": "Samples~/Prefabs"
+    }
+  ],
   "author": {
     "name": "Sebastien \"Glaas\" Decuyper",
     "email": "seb.decuyper@gmail.com",
-    "url": "https://www.sebdec.net",
-    "samples": [
-      {
-        "displayName": "Prefabs",
-        "description": "Contains prefabs to kickstart your setup",
-        "path": "Samples~/Prefabs"
-      }
-    ]
+    "url": "https://www.sebdec.net"
   }
 }
