@@ -29,8 +29,6 @@ public class DialogueContainer : MonoBehaviour
             case PlayerStates.Idle:
                 CreateBubble();
                 talk.playerState = PlayerStates.Talking;
-                FindObjectOfType<PlayerController>().canPlayerMove = false;
-
                 GoToNextLine(conversationsIndex, linesIndex);
                 break;
             case PlayerStates.Talking:
@@ -78,7 +76,6 @@ public class DialogueContainer : MonoBehaviour
         this.linesIndex = 0;
         bubble.CloseBubble();
         talk.EndConversation();
-        FindObjectOfType<PlayerController>().canPlayerMove = true;
         Destroy(clone, 1);
     }
 
