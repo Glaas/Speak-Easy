@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -13,13 +15,9 @@ public class DialogueContainer : MonoBehaviour
     [HideInInspector]
     public int linesIndex = 0;
 
-    public Conversation[] conversations;
+    public List<Conversation> conversations;
 
     private Talk talk;
-
-    public UnityEvent onStartConversation;
-    public UnityEvent onNextLine;
-    public UnityEvent onEndConversation;
 
     public void CreateBubble()
     {
@@ -46,11 +44,9 @@ public class DialogueContainer : MonoBehaviour
     {
         bubble.OpenBubble();
 
-        if (conversationsIndex == 0 && linesIndex == 0) onStartConversation.Invoke();
-
-        if (conversationsIndex < conversations.Length)
+        if (conversationsIndex < conversations.Count)
         {
-            if (linesIndex < conversations[conv_Index].Lines.Count)
+            if (linesIndex < conversations[conv_Index].lines.Count)
             {
                 if (conversations[conversationsIndex].talker == Conversation.Talker.NPC)
                 {
@@ -60,13 +56,12 @@ public class DialogueContainer : MonoBehaviour
                 {
                     bubble.AssignBubbleColor(FindObjectOfType<Talk>().playerChatBubbleColor);
                 }
-                onNextLine.Invoke();
-                bubble.SetText(Formatter(conversations[conversationsIndex].TalkerName, conversations[conv_Index].Lines[linesIndex]));
+                bubble.SetText(Formatter(conversations[conversationsIndex].TalkerName, conversations[conv_Index].lines[linesIndex]));
                 this.linesIndex++;
             }
             else
             {
-                if (conversationsIndex < conversations.Length - 1)
+                if (conversationsIndex < conversations.Count - 1)
                 {
                     conversationsIndex++;
                 }
@@ -84,7 +79,6 @@ public class DialogueContainer : MonoBehaviour
         this.linesIndex = 0;
         bubble.CloseBubble();
         talk.EndConversation();
-        onEndConversation.Invoke();
         Destroy(clone, 1);
     }
 
@@ -106,5 +100,6 @@ public class DialogueContainer : MonoBehaviour
         talk = FindObjectOfType<Talk>();
     }
 }
+
 
 

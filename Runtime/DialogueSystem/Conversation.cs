@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using System.Collections.Generic;
 
 using System;
@@ -13,6 +14,5 @@ public class Conversation : ScriptableObject
     }
     public Talker talker;
     public string TalkerName;
-    public List<string> Lines;
-
+    public List<string> lines;
 }
