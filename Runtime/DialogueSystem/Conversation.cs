@@ -4,7 +4,12 @@ using System;
 [Serializable]
 public struct Conversation
 {
-    public bool isPlayerTalking;
+    public enum Talker
+    {
+        Player,
+        NPC
+    }
+    public Talker talker;
     public string TalkerName;
     public List<string> Lines;
 }

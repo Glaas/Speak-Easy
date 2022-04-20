@@ -47,7 +47,7 @@ public class DialogueContainer : MonoBehaviour
         {
             if (linesIndex < conversations[conv_Index].Lines.Count)
             {
-                if (conversations[conversationsIndex].TalkerName == gameObject.name)
+                if (conversations[conversationsIndex].talker == Conversation.Talker.NPC)
                 {
                     bubble.AssignBubbleColor(NPC_color);
                 }
