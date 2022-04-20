@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DialogueContainer : MonoBehaviour
 {
@@ -15,6 +16,10 @@ public class DialogueContainer : MonoBehaviour
     public Conversation[] conversations;
 
     private Talk talk;
+
+    public UnityEvent onStartConversation;
+    public UnityEvent onNextLine;
+    public UnityEvent onEndConversation;
 
     public void CreateBubble()
     {
@@ -41,6 +46,8 @@ public class DialogueContainer : MonoBehaviour
     {
         bubble.OpenBubble();
 
+        if (conversationsIndex == 0 && linesIndex == 0) onStartConversation.Invoke();
+
         if (conversationsIndex < conversations.Length)
         {
             if (linesIndex < conversations[conv_Index].Lines.Count)
@@ -53,6 +60,7 @@ public class DialogueContainer : MonoBehaviour
                 {
                     bubble.AssignBubbleColor(FindObjectOfType<Talk>().playerChatBubbleColor);
                 }
+                onNextLine.Invoke();
                 bubble.SetText(Formatter(conversations[conversationsIndex].TalkerName, conversations[conv_Index].Lines[linesIndex]));
                 this.linesIndex++;
             }
@@ -76,6 +84,7 @@ public class DialogueContainer : MonoBehaviour
         this.linesIndex = 0;
         bubble.CloseBubble();
         talk.EndConversation();
+        onEndConversation.Invoke();
         Destroy(clone, 1);
     }
 
